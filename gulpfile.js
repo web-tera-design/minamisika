@@ -1,8 +1,20 @@
 import gulp from "gulp";
 import gulpSass from "gulp-sass";
 import * as dartSass from "sass";
+import { deleteSync } from "del";
 
 const sass = gulpSass(dartSass);
+
+export const clean = (done) => {
+  try {
+    const deletedPaths = deleteSync(["dist"], { force: true });
+    console.log("クリーンアップが完了しました。削除されたパス:", deletedPaths);
+    done();
+  } catch (error) {
+    console.error("クリーンアップ中にエラーが発生しました:", error);
+    done(error);
+  }
+};
 
 const compileSass = () => {
   return gulp
@@ -13,4 +25,8 @@ const compileSass = () => {
     .pipe(gulp.dest("dist/assets/css"));
 };
 
-export default compileSass;
+const copyHTML = () => gulp.src("src/**/*.html").pipe(gulp.dest("dist"));
+
+export const build = gulp.series(gulp.parallel(compileSass, copyHTML));
+export const main = gulp.series(clean, build);
+export default main;
