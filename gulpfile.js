@@ -26,7 +26,11 @@ const compileSass = () => {
 };
 
 const copyHTML = () => gulp.src("src/**/*.html").pipe(gulp.dest("dist"));
+const copyImg = () =>
+  gulp
+    .src("src/**/*.{ico,gif,jpg,jpeg,png,svg,webp,avif,webmanifest}")
+    .pipe(gulp.dest("dist"));
 
-export const build = gulp.series(gulp.parallel(compileSass, copyHTML));
+export const build = gulp.series(gulp.parallel(compileSass, copyHTML, copyImg));
 export const main = gulp.series(clean, build);
 export default main;
