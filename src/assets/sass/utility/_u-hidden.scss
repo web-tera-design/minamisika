@@ -1,0 +1,55 @@
+@use "global" as global;
+
+.u-hidden {
+  display: none;
+}
+.u-hidden-sm-up {
+  @include global.mq(sm) {
+    display: none;
+  }
+}
+.u-hidden-md-up {
+  @include global.mq(md) {
+    display: none;
+  }
+}
+.u-hidden-lg-up {
+  @include global.mq(lg) {
+    display: none;
+  }
+}
+.u-hidden-xl-up {
+  @include global.mq(xl) {
+    display: none;
+  }
+}
+.u-hidden-sm-down {
+  @include global.mq(sm, true) {
+    display: none;
+  }
+}
+.u-hidden-md-down {
+  @include global.mq(md, true) {
+    display: none;
+  }
+}
+.u-hidden-lg-down {
+  @include global.mq(lg, true) {
+    display: none;
+  }
+}
+.u-hidden-xl-down {
+  @include global.mq(xl, true) {
+    display: none;
+  }
+}
+.u-hidden-up {
+  @include global.mq {
+    display: none;
+  }
+}
+.u-hidden-down {
+  @include global.mq(bp, true) {
+    display: none;
+  }
+}

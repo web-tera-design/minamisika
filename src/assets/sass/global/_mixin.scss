@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "sass:meta";
+
+$breakpoints: (
+  "sm": 576,
+  "md": 768,
+  "lg": 1024,
+  "xl": 1280,
+  "bp": 768,
+) !default;
+
+//$below: falseでスマホファースト　treeでpcファースト
+@mixin mq($breakpoint: bp, $below: false) {
+  $breakpoint-value: map.get($breakpoints, $breakpoint);
+  @if meta.type-of($breakpoint) == number {
+    $breakpoint-value: $breakpoint;
+  }
+  $operator: if($below, "not ", "");
+  @media #{$operator} screen and (min-width: #{$breakpoint-value}px) {
+    @content;
+  }
+}

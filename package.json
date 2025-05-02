@@ -1,0 +1,11 @@
+{
+  "name": "minamisika",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.87.0"
+  }
+}
