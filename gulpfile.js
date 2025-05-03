@@ -26,14 +26,15 @@ const compileSass = () => {
     .pipe(gulp.dest("dist/assets/css"));
 };
 
-const copyHTML = () => gulp.src("src/**/*.html").pipe(gulp.dest("dist"));
-const copyJs = () => gulp.src("src/**/*.js").pipe(gulp.dest("dist"));
+const copyHTML = () =>
+  gulp.src("src/**/*.html", { encoding: false }).pipe(gulp.dest("dist"));
+const copyJs = () =>
+  gulp.src("src/**/*.js", { encoding: false }).pipe(gulp.dest("dist"));
 const copyImg = () =>
   gulp
     .src("src/**/*.{ico,gif,jpg,jpeg,png,svg,webp,avif,webmanifest}", {
       encoding: false,
     })
-
     .pipe(gulp.dest("dist"));
 
 const browserInit = (done) => {
@@ -57,6 +58,8 @@ const watchTask = () => {
 };
 
 export const watch = gulp.series(browserInit, watchTask);
-export const build = gulp.series(gulp.parallel(compileSass, copyHTML, copyImg, copyJs));
+export const build = gulp.series(
+  gulp.parallel(compileSass, copyHTML, copyImg, copyJs)
+);
 export const main = gulp.series(clean, build, watch);
 export default main;
