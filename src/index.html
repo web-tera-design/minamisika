@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <!-- swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js" defer></script>
@@ -196,28 +196,28 @@
     <div class="p-index-mv__main">
       <div class="p-index-mv__inner">
         <div class="p-index-mv__swiper-container">
+            <div class="p-index-mv__text-group">
+              <h2 class="p-index-mv__heading">街の皆さまの笑顔を守る</h2>
+              <p class="p-index-mv__sub">アットホームな歯医者さん</p>
+            </div>
           <div class="swiper p-index-mv__swiper --swiper1">
             <div class="swiper-wrapper p-index-mv__swiper-wrapper">
               <div class="swiper-slide p-index-mv__slide">
                 <img src="img/img.webp" alt="" width="670" height="894" class="slide-img">
-                <div class="p-index-mv__text-group">
-                  <h2 class="p-index-mv__heading">街の皆さまの笑顔を守る</h2>
-                  <p class="p-index-mv__sub">アットホームな歯医者さん</p>
-                </div>
               </div>
               <div class="swiper-slide p-index-mv__slide">
                 <img src="img/img1.webp" alt="" width="670" height="894" class="slide-img">
-                <div class="swiper-slide__text">
+                <!-- <div class="swiper-slide__text">
                   <h2 class="swiper-slide__heading">街の皆さまの笑顔を守る</h2>
                   <p class="swiper-slide__sub">アットホームな歯医者さん</p>
-                </div>
+                </div> -->
               </div>
               <div class="swiper-slide p-index-mv__slide">
                 <img src="img/img2.webp" alt="" width="670" height="894" class="slide-img">
-                <div class="p-index-mv__text-gtoup">
+                <!-- <div class="p-index-mv__text-gtoup">
                   <h2 class="p-index-mv__heading">街の皆さまの笑顔を守る</h2>
                   <p class="p-index-mv__sub">アットホームな歯医者さん</p>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -234,26 +234,32 @@
       </div>
     </div>
     <div class="p-index-mv__info">
-      <div class="p-index-mv__info-image">
+      <div class="p-index-mv__info-clinic-hours">
         <img src="img/medical-time-pc.png" alt="診療時間表" width="670" height="232">
       </div>
-      <div class="p-index-mv__info-content">
-        <div class="p-index-mv__info-header">
-          <div class="p-index-mv__info-title-group">
-            <h2 class="p-index-mv__info-title">お知らせ</h2>
-            <span class="p-index-mv__info-sub">NEWS</span>
-          </div>
-          <div class="p-index-mv__info-link-group">
-            <a href="#" class="p-index-mv__info-link">過去のお知らせはこちら</a>
-          </div>
+      <div class="p-index-mv__info-news">
+        <div class="p-index-mv__info-news-header">
+            <div class="p-index-mv__info-news-header-heading">
+                <hgroup class="c-news__heading">
+                  <h2 class="c-news-heading__main">お知らせ</h2>
+                  <p class="c-news-heading__sub">NEWS</p>
+                </hgroup>
+                <a href="#" class="p-index-mv__info-link">過去のお知らせはこちら</a>
+            </div>
         </div>
-        <a href="#" class="p-index-mv__info-news">
-          <time class="p-index-mv__info-date" datetime="2021-01-01">2021/01/01</time>
-          <p class="p-index-mv__info-text">年末年始の営業時間のお知らせ</p>
-        </a>
+        
+        <div class="p-index-mv__info-news-list">
+            <div class="p-index-mv__info-news-list-item">
+                <a href="#" class="c-news-line">
+                  <time class="c-news-line-date" datetime="2021-01-01">2021/01/01</time>
+                  <p class="c-news-line__title">年末年始の営業時間のお知らせ</p>
+                </a>
+            </div>
+        </div>
       </div>
     </div>
   </section>
+
   <section class="p-index-concept">
     <div class="p-index-concept__content">
       <hgroup class="p-index-heading-group">

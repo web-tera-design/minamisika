@@ -30,7 +30,10 @@ const copyHTML = () => gulp.src("src/**/*.html").pipe(gulp.dest("dist"));
 const copyJs = () => gulp.src("src/**/*.js").pipe(gulp.dest("dist"));
 const copyImg = () =>
   gulp
-    .src("src/**/*.{ico,gif,jpg,jpeg,png,svg,webp,avif,webmanifest}")
+    .src("src/**/*.{ico,gif,jpg,jpeg,png,svg,webp,avif,webmanifest}", {
+      encoding: false,
+    })
+
     .pipe(gulp.dest("dist"));
 
 const browserInit = (done) => {
