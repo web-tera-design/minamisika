@@ -1,0 +1,11 @@
+@use "global" as global;
+
+.l-section {
+}
+
+.l-section__inner {
+  box-sizing: initial;
+  max-inline-size: calc(global.$viewport-inner * 1px);
+  padding-inline: calc(global.$horizontal-spacing-sp * 1px);
+  margin-inline: auto;
+}
