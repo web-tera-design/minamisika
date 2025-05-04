@@ -1,0 +1,28 @@
+.c-heading {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px; /* 140% */
+  letter-spacing: 1.6px;
+
+  inline-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 16px;
+
+  &::before,
+  &::after {
+    content: "";
+    inline-size: 49px;
+    block-size: 13px;
+    background: url(../img/heading-pseudo.svg); /* 背景を指定 */
+  }
+
+  //   &::before {
+  //     margin-inline-end: 16px; /* ここに順番に入力 */
+  //   }
+
+  //   &::after {
+  //     margin-inline-start: ; /* ここに順番に入力 */
+  //   }
+}
