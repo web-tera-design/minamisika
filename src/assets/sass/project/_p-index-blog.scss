@@ -1,11 +1,20 @@
+@use "global" as global;
+
 .p-index-blog {
+  padding-block: 100px;
 }
 
 .p-index-blog__inner {
 }
 
 .p-index-blog__heading {
+  @include global.mq(bp) {
+    font-size: 50px;
+  }
 }
 
 .p-index-blog__cards {
+  display: grid;
+  row-gap: 20px;
+  margin-block-start: 48px;
 }

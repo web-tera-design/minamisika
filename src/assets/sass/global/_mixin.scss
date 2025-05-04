@@ -9,14 +9,18 @@ $breakpoints: (
   "bp": 768,
 ) !default;
 
-//$below: falseでスマホファースト　treeでpcファースト
 @mixin mq($breakpoint: bp, $below: false) {
   $breakpoint-value: map.get($breakpoints, $breakpoint);
   @if meta.type-of($breakpoint) == number {
     $breakpoint-value: $breakpoint;
   }
-  $operator: if($below, "not ", "");
-  @media #{$operator} screen and (min-width: #{$breakpoint-value}px) {
-    @content;
+  @if $below {
+    @media not screen and (min-width: #{$breakpoint-value}px) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: #{$breakpoint-value}px) {
+      @content;
+    }
   }
 }
